@@ -1,5 +1,5 @@
 {
-    "uri": "mongodb+srv://gennadiy:gvwKtUDO9nn8IJf6@cluster0.wdjmu9p.mongodb.net/shop",
+    "uri": "",
     "port": "3500",
     "SESSION_SECRET": "SECRET"
 }
