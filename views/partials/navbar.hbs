@@ -1,0 +1,51 @@
+  <nav class="menu-main">
+    <div class="nav-wrapper">
+      <div id="tt" class="manipulation">
+      <a class="left" href="/"><img class="brand-logo" src="/logo.png" alt="logo" width="40" height="40"></a>
+    </div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+    {{#if isAuth}}
+
+      {{#if isProduct}}
+        <li class="active"><a class="links" href="/product">Товары</a></li>
+      {{else}}
+        <li><a class="links" href="/product">Товары</a></li>
+      {{/if}}
+
+      {{#if isCube}}
+        <li class="active"><a class="links" href="/cube">Куб</a></li>
+      {{else}}
+        <li><a class="links" href="/cube">Куб</a></li>
+      {{/if}}
+
+      {{#if isGame}}
+        <li class="active"><a class="links" href="/game">Игра</a></li>
+      {{else}}
+        <li><a class="links" href="/game">Игра</a></li>
+      {{/if}}
+      <li><a  class="links" href="/auth/logout">Выйти</a></li>
+    {{else}}
+
+      {{#if isProduct}}
+        <li class="active"><a class="links" href="/product">Товары</a></li>
+      {{else}}
+        <li><a class="links" href="/product">Товары</a></li>
+      {{/if}}
+
+      {{#if isCube}}
+        <li class="active"><a class="links" href="/cube">Куб</a></li>
+      {{else}}
+        <li><a class="links" href="/cube">Куб</a></li>
+      {{/if}}
+
+      {{#if isLogin}}
+        <li class="active"><a class="links" href="/auth#createAkk">Войти/Создать акк</a></li>
+      {{else}}
+        <li><a class="links" href="/auth#createAkk">Войти/Создать акк</a></li>
+      {{/if}}
+
+    {{/if}}
+</ul>
+  </div>
+</nav>

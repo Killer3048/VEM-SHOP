@@ -1,0 +1,81 @@
+  <nav class="menu-main">
+    <div class="nav-wrapper">
+      <div id="tt" class="manipulation">
+      <a class="left" href="/"><img class="brand-logo" src="/logo.png" alt="logo" width="40" height="40"></a>
+    </div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      
+        {{#if isAdd}}
+        <li class="active"><a class="links" href="/add">Добавить</a></li>
+        {{else}}
+        <li><a class="links" href="/add">Добавить</a></li>
+        {{/if}}
+        {{#if isAuth}}
+
+      {{#if isProduct}}
+        <li class="active"><a class="links" href="/product">Товары</a></li>
+      {{else}}
+        <li><a class="links" href="/product">Товары</a></li>
+      {{/if}}
+
+      {{#if isCube}}
+        <li class="active"><a class="links" href="/cube">Куб</a></li>
+      {{else}}
+        <li><a class="links" href="/cube">Куб</a></li>
+      {{/if}}
+
+      {{#if isGame}}
+        <li class="active"><a class="links" href="/game">Игра</a></li>
+      {{else}}
+        <li><a class="links" href="/game">Игра</a></li>
+      {{/if}}
+      <li><a  class="links" href="/auth/logout">Выйти</a></li>
+    {{else}}
+
+      {{#if isProduct}}
+        <li class="active"><a class="links" href="/product">Товары</a></li>
+      {{else}}
+        <li><a class="links" href="/product">Товары</a></li>
+      {{/if}}
+
+      {{#if isCube}}
+        <li class="active"><a class="links" href="/cube">Куб</a></li>
+      {{else}}
+        <li><a class="links" href="/cube">Куб</a></li>
+      {{/if}}
+
+      {{#if isLogin}}
+        <li class="active"><a class="links" href="/auth#createAkk">Войти/Создать акк</a></li>
+      {{else}}
+        <li><a class="links" href="/auth#createAkk">Войти/Создать акк</a></li>
+      {{/if}}
+
+    {{/if}}
+    </ul>
+  </div>
+</nav>
+
+<section class="product">
+        <h2 class="section-title">Админ панель</h2>
+        <p class="section-subtitle">Добавление товаров и редактирование пользователей</p>
+        <ul class="table">
+        {{#if users.length}} 
+        {{#each users}}
+            <li class="table__cell">
+                    <p class="table__heading">Email: {{email}}</p>
+                    <p class="table__heading">Ник: {{name}}</p>
+                    <p class="table__heading">Пароль: {{pass}}</p>
+                <div class="table-action">
+                    <a class="table-cell__btn" href="/admin/{{_id}}/edit">Редактирование</a>
+                    <form class="form__remove" action="/admin/remove" method="POST">
+                        <input type="hidden" name="id" value="{{_id}}">
+                        <button class="table-cell__btn table-cell__btn_btn-primary" type="submit">Удалить юзера</button>
+                    </form>
+                </div>
+            </li>
+        {{/each}} 
+        {{else}}
+        </ul>
+        <p>товаров пока нет</p>
+        {{/if}}
+    </section>

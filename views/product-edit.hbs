@@ -1,0 +1,29 @@
+<h2 class="editor-title">Редактировать
+<br>"{{edits.info}}"</h2>
+<div class="opener">
+<form action="/product/edit" method="POST">
+  <div class="input-field">
+    <input id="title" name="info" type="text" class="validate" required value="{{edits.info}}">
+    <label for="title">Название</label>
+    <span class="helper-text" data-error="Введите название"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="price" name="price" type="number" class="validate" required min="100"  value="{{edits.price}}">
+    <label for="price">Цена</label>
+    <span class="helper-text" data-error="Введите цену"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="img" name="img" type="text" class="validate" required  value="{{edits.img}}">
+    <label for="img">URL картинки</label>
+    <span class="helper-text" data-error="Введите url картинки"></span>
+  </div>
+  <input type="hidden" name="id" value="{{edits._id}}">
+  <button type='submit' class="right btn btn-primary">Редактировать</button>
+</form>
+<form action="/product/remove" method="POST">
+  <input type="hidden" name="id" value="{{edits._id}}">
+  <button class="right btn__remove">Удалить мангу</button>
+</form>
+</div>

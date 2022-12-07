@@ -1,0 +1,79 @@
+{{#if contactFormSubmit}}
+
+<section class="section-s">
+  <h3 class="texty">
+      <span class=""><br>
+        {{contactFormSubmit}}
+      </span>
+      <a class="error__link-redirect" href="/">Вернуться на главную →</a>
+  </h3>
+  <img class="error__image" src="/thanks.png">
+</section>
+
+{{else}}
+<section class="section-s">
+  <h3 class="texty">
+      <span class=""><br>
+        <img src="/logo_home.png" alt="logo">
+      </span>
+    <h5 class="">
+
+
+      <span class="texty">
+        Самые лучшие товары в вашем городе
+        <br> 
+        Приемлемые цены, который понравятся вам в нашем магазине
+        <br>
+      </span>
+      <p class="texty"> 
+      Будь с нами и радуйся вместе с нами
+      </p>
+    </h5>
+  </h3>
+</section>
+
+<br>
+<div class="content">
+  <div class="content-wrap">
+    <div class="item">
+      <img class="opacity" src="/priemushectva.jpg" width="330" height="auto">
+    </div>
+    <div class="cont-text texttt">
+      <h2>Наши товары будут очень кстати, в повседневной жизни</h2>
+      <p class="texty">Для развлечений. Отдыха и посведневной жизни - все очень удобно</p>
+      <p class='texty'>Товары задизайнены в разных стилях, которые Вы можете выбрать на свой вкус</p>
+      <br>
+      <a href="/product" class="btn texttt">
+      Перейти к товарам</a>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="content-wrap">
+    <div class="item">
+      <img class="opacity" src="/priemushectva.jpg" width="330" height="auto">
+    </div>
+    <div class="cont-text texttt">
+      <h2>Наши товары будут очень кстати, в повседневной жизни</h2>
+      <p>Для развлечений. Отдыха и посведневной жизни - все очень удобно</p>
+      <p class=""></p>
+      <p>Товары задизайнены в разных стилях, которые Вы можете выбрать на свой вкус</p>
+      <br>
+      <a href="/product" class="btn texttt">
+      Перейти к товарам</a>
+    </div>
+  </div>
+</div>
+
+<div class="contact">
+  <p class="contact__title">Оставить обратную связь</p>
+  <form class="contact__form" action="/contact-form" method="post">
+    <input class="contact__input" type="text" name="contactName" id="" placeholder="Введите ваше имя">
+    <input class="contact__input" type="tel" name="contactTel" id="contactTel" placeholder="Телефон в формате +7**********" pattern="[+]{1}[0-9]{11,14}" required>
+    <input class="contact__input" type="email" name="contactEmail" id="" placeholder="Введите контактный email">
+    <br>
+  <button class="btn" type="submit" id="contactButton">Отправить</button>
+  </form>
+</div>
+{{/if}}

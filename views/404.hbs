@@ -1,0 +1,23 @@
+<body class="error">
+<div class="error__push">
+    <div class="push">
+        <h1 class="Error__section-title">
+        {{#if adminError404}}    
+            {{adminError404}}
+        {{else}}
+            Error 404
+        {{/if}}   
+        </h1>
+    </div>
+    <div class="error-text__push">     
+        {{#if nonAdmin}}
+            <p class="authError">{{nonAdmin}}</p>
+        {{else}}
+            Ой, кажется ты попал на несуществующую страницу. Перейди на главную! ~
+        {{/if}}
+    </div>
+</div>
+    <img class="error__image" src="/404-image.png">
+<a class="error__link-redirect" href="/">Верунться на главную  →</a>
+</body>
+

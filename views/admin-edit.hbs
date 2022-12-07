@@ -1,0 +1,30 @@
+<h2 class="editor-title">Редактировать
+<br>"{{editsUser.email}}"</h2>
+<div class="opener">
+<form action="/admin/edit" method="POST">
+  <div class="input-field">
+    <input id="email" name="email" type="text" class="validate" required value="{{editsUser.email}}">
+    <label for="email">Email юзера</label>
+    <span class="helper-text" data-error="Введите email юзера"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="name" name="name" type="text" class="validate" required value="{{editsUser.name}}">
+    <label for="name">Никнейм юзера</label>
+    <span class="helper-text" data-error="Введите никнейм юзера"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="pass" name="pass" type="text" class="validate" required value="{{editsUser.pass}}">
+    <label for="pass">Пароль юзера</label>
+    <span class="helper-text" data-error="Введите пароль юзера"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="id" name="id" type="text" class="validate" required  value="{{editsUser._id}}">
+    <label for="id">ID юзера</label>
+    <span class="helper-text" data-error="Не стоит менять"></span>
+  </div>
+  <button type='submit' class="right btn btn-primary">Редактировать</button>
+</form>
+</div>

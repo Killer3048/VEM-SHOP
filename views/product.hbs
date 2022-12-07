@@ -1,0 +1,26 @@
+    <section class="product">
+        <h2 class="section-title">Товары</h2>
+        <ul class="table">
+        {{#if model.length}} 
+        {{#each model}}
+            <li class="table__cell">
+                <div class="img">
+                    <img class="table__image" src="{{img}}" alt="{{info}}">
+                    </div>
+                    <p class="table__heading">{{info}}</p>
+                    <p class="table__price">{{price}}</p>
+                <div class="table-action">
+                    <a class="table-cell__btn" href="/product/{{_id}}" target="__blank">Открыть</a>
+                    <a class="table-cell__btn" href="/product/{{_id}}/edit">Редактирование</a>
+                    <form class="form__remove" action="/card/add" method="POST">
+                        <input type="hidden" name="id">
+                        <button class="table-cell__btn table-cell__btn_btn-primary" type="submit">Купить</button>
+                    </form>
+                </div>
+            </li>
+        {{/each}} 
+        {{else}}
+        </ul>
+        <p>товаров пока нет</p>
+        {{/if}}
+    </section>
