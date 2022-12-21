@@ -4,20 +4,16 @@ const config = require('config');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongodb-session')(session);
-
-
 const app = express();
 const store = new MongoStore({
     collection: 'mySes',
     uri: config.get('uri')
 });
-
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
     defaultLayout: 'darova',
     extname: 'hbs',
 });
-
 const homeRouter = require('./routes/home');
 const addRouter = require('./routes/add');
 const productRouter = require('./routes/product');
@@ -26,14 +22,11 @@ const authRouter = require('./routes/auth');
 const gameRouter = require('./routes/game-route');
 const cardRouter = require('./routes/card');
 const adminRouter = require('./routes/admin')
-
 const errorMiddleware = require('./middleware/error');
 const varMiddleware = require('./middleware/variables');
+const editAdmin = require('./middleware/editAdmin');
 
 const PORT = config.get('port');
-
-
-
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
@@ -44,9 +37,6 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-
 app.use(session({
     secret: config.get('SESSION_SECRET'),
     resave: false, //пересозданение сессии
@@ -55,6 +45,7 @@ app.use(session({
 }));
 
 app.use(varMiddleware);
+// app.use(editAdmin)
 
 app.use('/', homeRouter);
 app.use('/add', addRouter);
@@ -63,7 +54,8 @@ app.use('/cube', cubeRouter);
 app.use('/auth', authRouter);
 app.use('/game', gameRouter);
 app.use('/card', cardRouter);
-app.use('/admin', adminRouter)
+app.use('/admin', adminRouter);
+
 
 
 app.use(errorMiddleware);

@@ -10,8 +10,13 @@
                     <p class="table__heading">{{info}}</p>
                     <p class="table__price">{{price}}</p>
                 <div class="table-action">
+
                     <a class="table-cell__btn" href="/product/{{_id}}" target="__blank">Открыть</a>
+                    {{#if editAdmin}}
+                    
                     <a class="table-cell__btn" href="/product/{{_id}}/edit">Редактирование</a>
+                    {{else}}
+                    {{/if}}
                     <form class="form__remove" action="/card/add" method="POST">
                         <input type="hidden" name="id">
                         <button class="table-cell__btn table-cell__btn_btn-primary" type="submit">Купить</button>

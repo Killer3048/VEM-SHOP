@@ -16,7 +16,8 @@ const myUser = new Schema({
     },
     admin: {
         type: Number,
-        default: 0
+        default: 0,
+        required: true
     }
 }, {
     versionKey: false

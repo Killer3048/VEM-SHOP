@@ -1,5 +1,5 @@
 {
-    "uri": "mongodb+srv://ivan:ivan@cluster0.wdjmu9p.mongodb.net/?retryWrites=true&w=majority",
+    "uri": "mongodb+srv://gennadiy:gvwKtUDO9nn8IJf6@cluster0.wdjmu9p.mongodb.net/shop",
     "port": "3500",
     "SESSION_SECRET": "SECRET"
 }
