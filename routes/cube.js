@@ -1,6 +1,5 @@
 const { Router } = require('express')
 const router = Router()
-const Info = require('../models/info')
 
 
 router.get('/', (req, res) => {
